@@ -13,7 +13,8 @@ export const Users: CollectionConfig = {
     },
     delete: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
     read: authenticated,
-    update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
+    // Allow admins and editors to update users
+    update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin') || (req.user as any)?.roles?.includes('editor')),
   },
   admin: {
     defaultColumns: ['name', 'email'],
@@ -34,8 +35,9 @@ export const Users: CollectionConfig = {
       defaultValue: ['admin'],
       saveToJWT: true,
       access: {
-        create: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
-        update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
+        // Only admins and editors may set roles in the admin UI
+        create: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin') || (req.user as any)?.roles?.includes('editor')),
+        update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin') || (req.user as any)?.roles?.includes('editor')),
       },
     },
   ],
