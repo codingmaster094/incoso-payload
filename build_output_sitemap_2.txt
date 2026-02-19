@@ -1,0 +1,186 @@
+
+> incoso-payload-cms@1.0.0 build
+> cross-env NODE_OPTIONS=--no-deprecation next build
+
+   Γû▓ Next.js 15.4.11
+   - Environments: .env
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully in 17.0s
+   Linting and checking validity of types ...
+
+./src/app/(frontend)/news/[slug]/page.tsx
+11:15  Warning: 'News' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+14:8  Warning: 'Link' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+22:33  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+25:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+27:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+30:47  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+66:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+90:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+103:47  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+145:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+163:41  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+233:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+237:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+240:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+269:44  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+323:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/(frontend)/posts/[slug]/page.tsx
+45:40  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+49:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+52:46  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/(frontend)/[...slug]/page.tsx
+53:40  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+57:26  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+60:40  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/robots.ts
+13:27  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+14:11  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+16:50  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+28:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/blocks/News_hero_section/config.ts
+2:3  Warning: 'BlocksFeature' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+5:3  Warning: 'HorizontalRuleFeature' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./src/blocks/RenderBlocks.tsx
+61:20  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+63:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+81:29  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+84:58  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+128:54  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+154:32  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/collections/Pages/hooks/beforeChange.ts
+7:74  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/collections/Pages/index.ts
+20:3  Warning: 'PreviewField' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./src/components/BeforeDashboard/index.tsx
+4:10  Warning: 'SeedButton' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./src/components/Graphics/Icon.tsx
+5:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/Graphics/Logo.tsx
+5:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/endpoints/seed/index.ts
+49:19  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/Header/Component.client.tsx
+20:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+35:42  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+77:57  Warning: 'backLabel' is defined but never used. Allowed unused args must match /^_/u.  @typescript-eslint/no-unused-vars
+
+./src/utilities/extractTextFromLexical.ts
+1:47  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+4:38  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+14:53  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/utilities/generateMeta.ts
+31:40  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/utilities/generateSchema.ts
+1:15  Warning: 'WithContext' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+1:28  Warning: 'WebPage' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+1:37  Warning: 'BlogPosting' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+1:50  Warning: 'Organization' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+1:64  Warning: 'WebSite' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+1:105  Warning: 'Question' is defined but never used. Allowed unused vars must match /^_/u.  @typescript-eslint/no-unused-vars
+21:35  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+22:36  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+65:22  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+108:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+118:37  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+119:36  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+150:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+160:57  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+161:36  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+167:74  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+223:18  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+233:57  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+234:36  Warning: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/23) ...
+   Generating static pages (5/23) 
+   Generating static pages (11/23) 
+Lexical => HTML converter: Blocks converter: found das_wichtigste block, but no converter is provided
+Lexical => HTML converter: Blocks converter: found news_content_cta block, but no converter is provided
+Lexical => HTML converter: Blocks converter: found kurvige_lifte block, but no converter is provided
+Lexical => HTML converter: Blocks converter: found news_content_faq block, but no converter is provided
+Lexical => HTML converter: Blocks converter: found news_content_kosten block, but no converter is provided
+Lexical => HTML converter: Blocks converter: found das_wichtigste block, but no converter is provided
+Lexical => HTML converter: Blocks converter: found news_content_cta block, but no converter is provided
+Lexical => HTML converter: Blocks converter: found kurvige_lifte block, but no converter is provided
+Lexical => HTML converter: Blocks converter: found news_content_faq block, but no converter is provided
+Lexical => HTML converter: Blocks converter: found news_content_kosten block, but no converter is provided
+   Generating static pages (17/23) 
+ Γ£ô Generating static pages (23/23)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                                                                                           Size  First Load JS  Revalidate  Expire
+Γöî Γùï /                                                                                                                                557 B         201 kB
+Γö£ Γùï /_not-found                                                                                                                       1 kB         102 kB
+Γö£ ΓùÅ /[...slug]                                                                                                                       557 B         201 kB
+Γö£   Γö£ /kontaktiere-uns
+Γö£   Γö£ /ueber-uns
+Γö£   Γö£ /publikationen
+Γö£   Γöö [+4 more paths]
+Γö£ ╞Æ /admin/[[...segments]]                                                                                                           678 B         725 kB
+Γö£ ╞Æ /api/[...slug]                                                                                                                   178 B         102 kB
+Γö£ ╞Æ /api/graphql                                                                                                                     149 B         102 kB
+Γö£ ╞Æ /api/graphql-playground                                                                                                          178 B         102 kB
+Γö£ ╞Æ /api/search                                                                                                                      149 B         102 kB
+Γö£ Γùï /news                                                                                                                            321 B         126 kB         10m      1y
+Γö£ ΓùÅ /news/[slug]                                                                                                                   4.12 kB         205 kB
+Γö£   Γö£ /news/outlook-2026-robuste-gewinne-und-anhaltende-investitionen-in-neue-technologien-knnten-globale-aktien-weiterhin-sttzen
+Γö£   Γö£ /news/outlook-2026-entkopplung-schafft-chancen-fr-resilienz
+Γö£   Γöö /news/small-und-mid-market-buyouts-10-strukturelle-und-zyklische-rckenwinde--und-wie-sie-erfolgreich-investieren
+Γö£ ΓùÅ /news/page/[pageNumber]                                                                                                          321 B         126 kB
+Γö£ ╞Æ /next/exit-preview                                                                                                               149 B         102 kB
+Γö£ ╞Æ /next/preview                                                                                                                    149 B         102 kB
+Γö£ ╞Æ /next/seed                                                                                                                       149 B         102 kB
+Γö£ Γùï /posts                                                                                                                           324 B         126 kB         10m      1y
+Γö£ ΓùÅ /posts/[slug]                                                                                                                    519 B         152 kB
+Γö£ ΓùÅ /posts/page/[pageNumber]                                                                                                         320 B         126 kB
+Γö£ ╞Æ /robots.txt                                                                                                                      149 B         102 kB
+Γö£ ╞Æ /search                                                                                                                        6.47 kB         125 kB
+Γöö ╞Æ /sitemap.xml                                                                                                                     149 B         102 kB
++ First Load JS shared by all                                                                                                       101 kB
+  Γö£ chunks/4bd1b696-cc729d47eba2cee4.js                                                                                            54.1 kB
+  Γö£ chunks/5964-217149ecc4b4e5f3.js                                                                                                  44 kB
+  Γöö other shared chunks (total)                                                                                                    3.34 kB
+
+
+Γùï  (Static)   prerendered as static content
+ΓùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+╞Æ  (Dynamic)  server-rendered on demand
+
+
+> incoso-payload-cms@1.0.0 postbuild
+> next-sitemap --config next-sitemap.config.cjs
+
+Γ£¿ [next-sitemap] Loading next-sitemap config: file:///E:/Shiv%20Github%20Project/incoso-payload/next-sitemap.config.cjs
+Γ£à [next-sitemap] Generation completed
+ΓöîΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ
+Γöé (index)       Γöé Values Γöé
+Γö£ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö╝ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöñ
+Γöé indexSitemaps Γöé 1      Γöé
+Γöé sitemaps      Γöé 0      Γöé
+ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö┤ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
+-----------------------------------------------------
+ SITEMAP INDICES 
+-----------------------------------------------------
+
+   Γùï https://incoso-payload-inky.vercel.app/sitemap.xml
+
+

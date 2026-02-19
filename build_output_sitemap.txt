@@ -1,0 +1,43 @@
+
+> incoso-payload-cms@1.0.0 build
+> cross-env NODE_OPTIONS=--no-deprecation next build
+
+   Γû▓ Next.js 15.4.11
+   - Environments: .env
+
+   Creating an optimized production build ...
+glob error [Error: EPERM: operation not permitted, scandir 'E:\Shiv Github Project\incoso-payload\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'scandir',
+  path: 'E:\\Shiv Github Project\\incoso-payload\\.next\\trace'
+}
+Failed to compile.
+
+Error: EPERM: operation not permitted, scandir 'E:\Shiv Github Project\incoso-payload\.next\trace'
+
+HookWebpackError: Cannot read properties of undefined (reading 'server')
+    at makeWebpackError (E:\Shiv Github Project\incoso-payload\node_modules\next\dist\compiled\webpack\bundle5.js:29:315765)
+    at E:\Shiv Github Project\incoso-payload\node_modules\next\dist\compiled\webpack\bundle5.js:29:106471
+    at eval (eval at create (E:\Shiv Github Project\incoso-payload\node_modules\next\dist\compiled\webpack\bundle5.js:14:9224), <anonymous>:20:1)
+-- inner error --
+TypeError: Cannot read properties of undefined (reading 'server')
+    at FlightClientEntryPlugin.createActionAssets (E:\Shiv Github Project\incoso-payload\node_modules\next\dist\build\webpack\plugins\flight-client-entry-plugin.js:675:68)
+    at E:\Shiv Github Project\incoso-payload\node_modules\next\dist\build\webpack\plugins\flight-client-entry-plugin.js:170:25
+    at fn (E:\Shiv Github Project\incoso-payload\node_modules\next\dist\compiled\webpack\bundle5.js:29:70186)
+    at _next7 (eval at create (E:\Shiv Github Project\incoso-payload\node_modules\next\dist\compiled\webpack\bundle5.js:14:9224), <anonymous>:12:17)
+    at eval (eval at create (E:\Shiv Github Project\incoso-payload\node_modules\next\dist\compiled\webpack\bundle5.js:14:9224), <anonymous>:31:1)
+caused by plugins in Compilation.hooks.processAssets
+TypeError: Cannot read properties of undefined (reading 'server')
+    at FlightClientEntryPlugin.createActionAssets (E:\Shiv Github Project\incoso-payload\node_modules\next\dist\build\webpack\plugins\flight-client-entry-plugin.js:675:68)
+    at E:\Shiv Github Project\incoso-payload\node_modules\next\dist\build\webpack\plugins\flight-client-entry-plugin.js:170:25
+    at fn (E:\Shiv Github Project\incoso-payload\node_modules\next\dist\compiled\webpack\bundle5.js:29:70186)
+    at _next7 (eval at create (E:\Shiv Github Project\incoso-payload\node_modules\next\dist\compiled\webpack\bundle5.js:14:9224), <anonymous>:12:17)
+    at eval (eval at create (E:\Shiv Github Project\incoso-payload\node_modules\next\dist\compiled\webpack\bundle5.js:14:9224), <anonymous>:31:1)
+
+uncaughtException [Error: EPERM: operation not permitted, open 'E:\Shiv Github Project\incoso-payload\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'E:\\Shiv Github Project\\incoso-payload\\.next\\trace'
+}

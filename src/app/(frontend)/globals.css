@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+@font-face {
+    font-display: swap;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../../public/fonts/inter-v20-latin-regular.woff2') format('woff2')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../../../public/fonts/inter-v20-latin-500.woff2') format('woff2')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    src: url('../../../public/fonts/inter-v20-latin-600.woff2') format('woff2')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../../public/fonts/inter-v20-latin-700.woff2') format('woff2')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 800;
+    src: url('../../../public/fonts/inter-v20-latin-800.woff2') format('woff2')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../../public/fonts/poppins-v24-latin-regular.woff2') format('woff2')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../../../public/fonts/poppins-v24-latin-500.woff2') format('woff2')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    src: url('../../../public/fonts/poppins-v24-latin-600.woff2') format('woff2')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../../public/fonts/poppins-v24-latin-700.woff2') format('woff2')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 800;
+    src: url('../../../public/fonts/poppins-v24-latin-800.woff2') format('woff2')
+}
+
+@theme {
+    --spacing: 1px;
+    --spacing-spc: clamp(2.5rem, 2.025rem + 2.375vw, 4.875rem);
+
+
+    --container-*: initial;
+    --container-padding: 16px;
+    --container-xsm: 450px;
+    --container-sm: 576px;
+    --container-md: 768px;
+    --container-lg: 992px;
+    --container-xl: 1236px;
+
+    --breakpoint-*: initial;
+    --breakpoint-xsm: 450px;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1236px;
+
+    --color-green: #06402B;
+    --color-light: #F5F5F5;
+    --color-sky: #F4F6F9;
+    --color-stroke: #D9DFE7;
+    --color-stroke2: #E5E7EB;
+    --color-gray: #D9D9D9;
+
+    --font-inter: "Inter", system-ui, "-apple-system", "Segoe UI";
+    --font-poppins: "Poppins", "Montserrat", "Segoe UI", Arial;
+
+    --text-38: clamp(1.875rem, 1.775rem + 0.5vw, 2.375rem);
+    --text-38--line-height: clamp(2.375rem, 2.275rem + 0.5vw, 2.875rem);
+
+    --text-24: 24px;
+
+    --text-22: 22px;
+    --text-22--line-height: 26.4px;
+
+    --text-18: 18px;
+    --text-18--line-height: 21.6px;
+
+    --text-p: 16px;
+    --text-p--line-height: 19.2px;
+}
+
+@layer base {
+    :root {
+        --header-size: 70px;
+    }
+
+    @media (min-width:992px) {
+        :root {
+            --header-size: 100px;
+        }
+    }
+
+    html {
+        @apply scroll-auto;
+    }
+
+    html.lenis,
+    html.lenis body {
+        height: auto;
+    }
+
+    .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+        overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+    }
+
+    body {
+        @apply font-poppins text-p;
+    }
+
+    .container {
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skip_link {
+        @apply sr-only;
+    }
+
+    .skip_link:focus {
+        @apply not-sr-only fixed top-10 left-10 z-99 bg-black px-20 py-10 text-white shadow-lg outline-none ring-2 ring-white;
+    }
+
+    button {
+        @apply cursor-pointer;
+    }
+
+    [id] {
+        @apply scroll-mt-100
+    }
+}
+
+@layer components {
+    .title {
+        @apply space-y-10 xl:space-y-40 max-w-810 mb-20 xl:mb-40
+    }
+
+    .title :is(h1, h2, h3, h4, h5, h6) {
+        @apply text-22 font-extrabold font-inter
+    }
+
+    .trans_slow {
+        @apply transition-all duration-300 ease-in-out;
+    }
+
+    .text {
+        @apply space-y-10 xl:space-y-20
+    }
+
+    .underlined {
+        @apply relative
+    }
+
+    .underlined::after {
+        @apply content-[''] block absolute bottom-0 left-0 mb-15 xl:mb-27 w-62 h-3 bg-green
+    }
+
+    .active {
+        @apply relative
+    }
+
+    .active::after {
+        @apply content-[''] absolute left-0 right-0 -bottom-10 border-b-3 border-green
+    }
+
+    .list_disc li::before {
+        @apply content-['•'] mr-10;
+    }
+
+    .list_disc li {
+        @apply flex;
+    }
+
+    .list_arrow li::before {
+        @apply content-[url(/image/right-icon-2.svg)] mr-2.5 mt-1.5;
+    }
+
+    .list_arrow li {
+        @apply flex;
+    }
+
+    .admin-bar {
+        @apply hidden;
+    }
+}
+
+@layer utilities {
+    .reverse {
+        flex-direction: row-reverse;
+    }
+
+}
+
+.container {
+    max-width: unset !important;
+    padding: 0 clamp(1rem, -0.05rem + 5.25vw, 6.25rem) !important;
+}
