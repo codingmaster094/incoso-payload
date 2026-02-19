@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
+import roleBased, { isAdmin, isEditor } from '../../access/roleBased'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -9,12 +10,11 @@ export const Users: CollectionConfig = {
     // Allow public signup (no req.user) but require admin for admin-initiated creates
     create: ({ req }) => {
       if (!req?.user) return true
-      return Boolean((req.user as any)?.roles?.includes('admin'))
+      return isAdmin({ req })
     },
-    delete: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
+    delete: ({ req }) => isAdmin({ req }),
     read: authenticated,
-    // Allow admins and editors to update users
-    update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin') || (req.user as any)?.roles?.includes('editor')),
+    update: ({ req }) => isAdmin({ req }) || isEditor({ req }),
   },
   admin: {
     defaultColumns: ['name', 'email'],
@@ -32,12 +32,12 @@ export const Users: CollectionConfig = {
       hasMany: true,
       options: ['admin', 'editor', 'author'],
       required: true,
-      defaultValue: ['admin'],
+        defaultValue: ['author'],
       saveToJWT: true,
       access: {
         // Only admins and editors may set roles in the admin UI
-        create: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin') || (req.user as any)?.roles?.includes('editor')),
-        update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin') || (req.user as any)?.roles?.includes('editor')),
+          create: ({ req }) => isAdmin({ req }) || isEditor({ req }),
+          update: ({ req }) => isAdmin({ req }) || isEditor({ req }),
       },
     },
   ],
