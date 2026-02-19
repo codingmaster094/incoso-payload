@@ -31,7 +31,7 @@ export const Users: CollectionConfig = {
       hasMany: true,
       options: ['admin', 'editor', 'author'],
       required: true,
-      defaultValue: ['author'],
+      defaultValue: ['admin'],
       saveToJWT: true,
       access: {
         create: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
