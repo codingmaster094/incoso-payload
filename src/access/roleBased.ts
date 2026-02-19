@@ -2,35 +2,38 @@ import type { Access } from 'payload'
 
 type AccessArgs = Parameters<Access>[0]
 
-export const isAdmin = ({ req: { user } }: AccessArgs) => Boolean(user?.roles?.includes('admin'))
+export const isAdmin = ({ req }: AccessArgs) => Boolean(req?.user?.roles?.includes('admin'))
+export const isEditor = ({ req }: AccessArgs) => Boolean(req?.user?.roles?.includes('editor'))
+export const isAuthor = ({ req }: AccessArgs) => Boolean(req?.user?.roles?.includes('author'))
 
-export const isEditor = ({ req: { user } }: AccessArgs) => Boolean(user?.roles?.includes('editor'))
+// Create: admin, editor, author
+export const canCreate: Access = ({ req }) => {
+  if (!req?.user) return false
+  const roles: string[] = req.user?.roles ?? []
+  return roles.includes('admin') || roles.includes('editor') || roles.includes('author')
+}
 
-export const canCreate: Access = ({ req: { user } }) => {
-  if (!user) return false
-  if (user.roles?.includes('admin')) return true
-  if (user.roles?.includes('editor')) return true
+// Update: admin and editor can update any; authors can update their own docs
+export const canUpdate: Access = ({ req }) => {
+  if (!req?.user) return false
+  if (req.user.roles?.includes('admin')) return true
+  if (req.user.roles?.includes('editor')) return true
+
+  if (req.user.roles?.includes('author')) {
+    // Authors may update documents they are listed on via `authors` relationship
+    return { authors: { in: [req.user.id] } }
+  }
+
   return false
 }
 
-export const canUpdate: Access = ({ req: { user } }) => {
-  if (!user) return false
-  if (user.roles?.includes('admin')) return true
-  if (user.roles?.includes('editor')) return true
-  // For ownership-based update, return a query object instead:
-  // return { author: { equals: user.id } }
-  return false
-}
-
-export const canDelete: Access = ({ req: { user } }) => {
-  if (!user) return false
-  // Only admins can delete by default
-  return user.roles?.includes('admin')
-}
+// Delete: admins only
+export const canDelete: Access = ({ req }) => Boolean(req?.user?.roles?.includes('admin'))
 
 export default {
   isAdmin,
   isEditor,
+  isAuthor,
   canCreate,
   canUpdate,
   canDelete,

@@ -7,10 +7,14 @@ export const Users: CollectionConfig = {
   slug: 'users',
   access: {
     admin: authenticated,
-    create: authenticated,
-    delete: authenticated,
+    // Allow public signup (no req.user) but restrict admin-initiated create to admins
+    create: ({ req }) => {
+      if (!req?.user) return true // public signup
+      return Boolean(req.user?.roles?.includes('admin'))
+    },
+    delete: ({ req }) => Boolean(req.user?.roles?.includes('admin')),
     read: authenticated,
-    update: authenticated,
+    update: ({ req }) => Boolean(req.user?.roles?.includes('admin')),
   },
   admin: {
     defaultColumns: ['name', 'email'],
@@ -31,9 +35,26 @@ export const Users: CollectionConfig = {
       defaultValue: ['author'],
       saveToJWT: true,
       access: {
+        create: ({ req }) => Boolean(req.user?.roles?.includes('admin')),
         update: ({ req }) => Boolean(req.user?.roles?.includes('admin')),
       },
     },
   ],
+  hooks: {
+    beforeChange: [
+      async ({ req, data, operation }) => {
+        // If this is a public signup (no req.user), ensure roles cannot be set
+        if (operation === 'create' && !req?.user) {
+          return {
+            ...data,
+            roles: ['author'],
+          }
+        }
+
+        // Otherwise leave data untouched
+        return data
+      },
+    ],
+  },
   timestamps: true,
 }

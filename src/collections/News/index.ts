@@ -11,6 +11,7 @@ import {
 } from '@payloadcms/richtext-lexical'
 
 import { authenticated } from '../../access/authenticated'
+import { canCreate, canUpdate, canDelete } from '../../access/roleBased'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
 import { Banner } from '../../blocks/Banner/config'
 import { Code } from '../../blocks/Code/config'
@@ -37,10 +38,10 @@ import { slugField } from 'payload'
 export const News: CollectionConfig<'news'> = {
   slug: 'news',
   access: {
-    create: authenticated,
-    delete: authenticated,
+    create: canCreate,
+    delete: canDelete,
     read: authenticatedOrPublished,
-    update: authenticated,
+    update: canUpdate,
   },
 
   defaultPopulate: {
