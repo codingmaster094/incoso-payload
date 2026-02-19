@@ -12,7 +12,6 @@ import {
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { canCreate, canUpdate, canDelete } from '../../access/roleBased'
 import { Banner } from '../../blocks/Banner/config'
 import { Code } from '../../blocks/Code/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
@@ -33,10 +32,10 @@ import { News_Hero_Section } from '../../blocks/News_hero_section/config'
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
   access: {
-    create: canCreate,
-    delete: canDelete,
+    create: authenticated,
+    delete: authenticated,
     read: authenticatedOrPublished,
-    update: canUpdate,
+    update: authenticated,
   },
   // This config controls what's populated by default when a post is referenced
   // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property

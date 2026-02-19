@@ -1,20 +1,19 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
-import { isAdmin } from '../../access/roleBased'
 
 export const Users: CollectionConfig = {
   slug: 'users',
   access: {
     admin: authenticated,
-    // Allow public signup (no req.user) but restrict admin-initiated create to admins
+    // Allow public signup (no req.user) but require admin for admin-initiated creates
     create: ({ req }) => {
-      if (!req?.user) return true // public signup
-      return Boolean(req.user?.roles?.includes('admin'))
+      if (!req?.user) return true
+      return Boolean((req.user as any)?.roles?.includes('admin'))
     },
-    delete: ({ req }) => Boolean(req.user?.roles?.includes('admin')),
+    delete: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
     read: authenticated,
-    update: ({ req }) => Boolean(req.user?.roles?.includes('admin')),
+    update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
   },
   admin: {
     defaultColumns: ['name', 'email'],
@@ -35,23 +34,39 @@ export const Users: CollectionConfig = {
       defaultValue: ['author'],
       saveToJWT: true,
       access: {
-        create: ({ req }) => Boolean(req.user?.roles?.includes('admin')),
-        update: ({ req }) => Boolean(req.user?.roles?.includes('admin')),
+        create: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
+        update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
       },
     },
   ],
   hooks: {
     beforeChange: [
       async ({ req, data, operation }) => {
-        // If this is a public signup (no req.user), ensure roles cannot be set
-        if (operation === 'create' && !req?.user) {
-          return {
-            ...data,
-            roles: ['author'],
+        if (operation === 'create') {
+          try {
+            const existing = await req.payload.find({ collection: 'users', limit: 1, depth: 0 })
+            const total = (existing as any).totalDocs ?? (existing as any).docs?.length ?? 0
+
+            if (total === 0) {
+              // Make the very first user an admin
+              return {
+                ...data,
+                roles: ['admin'],
+              }
+            }
+          } catch (e) {
+            // ignore errors and continue
+          }
+
+          // If this is a public signup (no req.user), ensure roles cannot be set
+          if (!req?.user) {
+            return {
+              ...data,
+              roles: ['author'],
+            }
           }
         }
 
-        // Otherwise leave data untouched
         return data
       },
     ],

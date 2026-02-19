@@ -2,7 +2,6 @@ import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { canCreate, canUpdate, canDelete } from '../../access/roleBased'
 import { Archive } from '../../blocks/ArchiveBlock/config'
 import { CallToAction } from '../../blocks/CallToAction/config'
 import { Content } from '../../blocks/Content/config'
@@ -34,10 +33,10 @@ import { Latest_news_without_img } from '@/blocks/Latest_news_without_img/config
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
   access: {
-    create: canCreate,
-    delete: canDelete,
+    create: authenticated,
+    delete: authenticated,
     read: authenticatedOrPublished,
-    update: canUpdate,
+    update: authenticated,
   },
   defaultPopulate: {
     title: true,
