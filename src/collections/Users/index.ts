@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
+import { isAdminField } from '../../access/roleBased'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -35,9 +36,9 @@ export const Users: CollectionConfig = {
       defaultValue: ['admin'],
       saveToJWT: true,
       access: {
-        // Only admins and editors may set roles in the admin UI
-        create: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin') || (req.user as any)?.roles?.includes('editor')),
-        update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin') || (req.user as any)?.roles?.includes('editor')),
+        // Only admins may set roles in the admin UI
+        create: isAdminField,
+        update: isAdminField,
       },
     },
   ],
