@@ -17,8 +17,8 @@ import {
   MetaImageField,
   MetaTitleField,
   OverviewField,
-  PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
 import { Hero_Image } from '@/blocks/Hero_Image/config'
 import { Unser_ansatz } from '@/blocks/Unser_Ansatz/config'
 import { Unsere_Boxes } from '@/blocks/Unsere_Boxes/config'
@@ -37,8 +37,13 @@ export const Pages: CollectionConfig<'pages'> = {
     admin: authenticated,
     create: isAdmin,
     delete: isAdmin,
-    read: (args) => isAdmin(args) || isEditor(args),
-    update: (args) => isAdmin(args) || isEditor(args),
+    read: (args) => {
+      if (args.req.user) {
+        return isAdmin(args) || isEditor(args)
+      }
+      return authenticatedOrPublished(args)
+    },
+    update: isAdmin || isEditor,
   },
   defaultPopulate: {
     title: true,

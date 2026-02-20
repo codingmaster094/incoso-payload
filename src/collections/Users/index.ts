@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
-import { isAdminField } from '../../access/roleBased'
+import { isAdmin, isEditor, isAdminField } from '../../access/roleBased'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -47,8 +47,8 @@ export const Users: CollectionConfig = {
       defaultValue: ['admin'],
       saveToJWT: true,
       access: {
-        create: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
-        update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
+        create: isAdminField,
+        update: isAdminField,
       },
     },
   ],
@@ -67,7 +67,7 @@ export const Users: CollectionConfig = {
                 roles: ['admin'],
               }
             }
-          } catch (e) {
+          } catch (ignore) {
             // ignore errors and continue
           }
 

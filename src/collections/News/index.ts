@@ -32,6 +32,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
 import { slugField } from 'payload'
 
 export const News: CollectionConfig<'news'> = {
@@ -40,7 +41,12 @@ export const News: CollectionConfig<'news'> = {
     admin: authenticated,
     create: isAdmin,
     delete: isAdmin,
-    read: (args) => isAdmin(args) || isEditor(args),
+    read: (args) => {
+      if (args.req.user) {
+        return isAdmin(args) || isEditor(args)
+      }
+      return authenticatedOrPublished(args)
+    },
     update: (args) => isAdmin(args) || isEditor(args),
   },
   defaultPopulate: {

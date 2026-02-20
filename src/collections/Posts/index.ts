@@ -26,6 +26,7 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
 import { slugField } from 'payload'
 import { News_Hero_Section } from '../../blocks/News_hero_section/config'
 
@@ -35,7 +36,12 @@ export const Posts: CollectionConfig<'posts'> = {
     admin: authenticated,
     create: isAdmin,
     delete: isAdmin,
-    read: (args) => isAdmin(args) || isEditor(args),
+    read: (args) => {
+      if (args.req.user) {
+        return isAdmin(args) || isEditor(args)
+      }
+      return authenticatedOrPublished(args)
+    },
     update: (args) => isAdmin(args) || isEditor(args),
   },
   // This config controls what's populated by default when a post is referenced
