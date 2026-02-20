@@ -2,7 +2,7 @@
 import { fetch } from 'undici';
 
 async function verify() {
-    const url = 'https://incoso-payload-inky.vercel.app/';
+    const url = 'https://incoso-payload-self.vercel.app/';
     console.log(`Fetching ${url}...`);
     try {
         const res = await fetch(url);

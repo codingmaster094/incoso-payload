@@ -5,7 +5,7 @@ export const getServerSideURL = () => {
     process.env.NEXT_PUBLIC_SERVER_URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : 'https://incoso-payload-inky.vercel.app')
+      : 'https://incoso-payload-self.vercel.app')
   )
 }
 

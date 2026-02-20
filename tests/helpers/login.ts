@@ -15,7 +15,7 @@ export interface LoginOptions {
  */
 export async function login({
   page,
-  serverURL = 'https://incoso-payload-inky.vercel.app',
+  serverURL = 'https://incoso-payload-self.vercel.app',
   user,
 }: LoginOptions): Promise<void> {
   await page.goto(`${serverURL}/admin/login`)

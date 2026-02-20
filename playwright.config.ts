@@ -36,6 +36,6 @@ export default defineConfig({
   webServer: {
     command: 'pnpm dev',
     reuseExistingServer: true,
-    url: 'https://incoso-payload-inky.vercel.app',
+    url: 'https://incoso-payload-self.vercel.app',
   },
 })
