@@ -14,8 +14,19 @@ export const Users: CollectionConfig = {
     },
     delete: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
     read: authenticated,
-    // Allow admins and editors to update users
-    update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin') || (req.user as any)?.roles?.includes('editor')),
+    update: ({ req: { user } }) => {
+      if (!user) return false
+      const roles = (user as any)?.roles || []
+      if (roles.includes('admin')) return true
+      if (roles.includes('editor')) {
+        return {
+          id: {
+            equals: user.id,
+          },
+        }
+      }
+      return false
+    },
   },
   admin: {
     defaultColumns: ['name', 'email'],
