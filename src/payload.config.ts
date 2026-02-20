@@ -21,7 +21,7 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || (process.env.NODE_ENV === 'production' ? 'https://incoso-payload-self.vercel.app' : 'http://localhost:3000'),
+  serverURL: getServerSideURL(),
   admin: {
     meta: {
       titleSuffix: '- Incoso',
@@ -75,6 +75,7 @@ export default buildConfig({
   }),
   collections: [Pages, Posts, News, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
+  csrf: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, Robots],
   plugins,
   secret: process.env.PAYLOAD_SECRET,
