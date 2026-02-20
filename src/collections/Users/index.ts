@@ -5,6 +5,16 @@ import { isAdminField } from '../../access/roleBased'
 
 export const Users: CollectionConfig = {
   slug: 'users',
+  labels: {
+    singular: {
+      en: 'Users',
+      de: 'Benutzer',
+    },
+    plural: {
+      en: 'Users',
+      de: 'Benutzer',
+    },
+  },
   access: {
     admin: authenticated,
     // Allow public signup (no req.user) but require admin for admin-initiated creates
