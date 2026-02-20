@@ -3,6 +3,10 @@ import { getServerSideURL } from '../utilities/getURL'
 import { isAdmin, isAuthor, isEditor } from '../access/roleBased'
 export const Robots: GlobalConfig = {
     slug: 'robots',
+    label: {
+        en: "Robots.txt",
+        de: "Robots.txt"
+    },
     access: {
         read: () => true,
         update: (args) => isAdmin(args) || isEditor(args) || isAuthor(args),
@@ -14,7 +18,10 @@ export const Robots: GlobalConfig = {
         {
             name: 'rules',
             type: 'array',
-            label: 'Robots Rules',
+            label: {
+                en: 'Robots Rules',
+                de: 'Roboter-Regeln'
+            },
             defaultValue: [
                 {
                     userAgent: '*',
@@ -26,26 +33,38 @@ export const Robots: GlobalConfig = {
                 {
                     name: 'userAgent',
                     type: 'text',
-                    label: 'User Agent',
+                    label: {
+                        en: 'User Agent',
+                        de: 'Benutzer-Agent'
+                    },
                     required: true,
                     defaultValue: '*',
                 },
                 {
                     name: 'allow',
                     type: 'text',
-                    label: 'Allow',
+                    label: {
+                        en: 'Allow',
+                        de: 'Erlauben'
+                    },
                 },
                 {
                     name: 'disallow',
                     type: 'text',
-                    label: 'Disallow',
+                    label: {
+                        en: 'Disallow',
+                        de: 'Nicht erlauben'
+                    },
                 },
             ],
         },
         {
             name: 'sitemaps',
             type: 'array',
-            label: 'Sitemaps',
+            label: {
+                en: 'Sitemaps',
+                de: 'Sitemaps'
+            },
             defaultValue: [
                 { url: `${getServerSideURL()}/sitemap.xml` },
             ],
@@ -53,7 +72,10 @@ export const Robots: GlobalConfig = {
                 {
                     name: 'url',
                     type: 'text',
-                    label: 'Sitemap URL',
+                    label: {
+                        en: 'Sitemap URL',
+                        de: 'Sitemap URL'
+                    },
                     required: true,
                 },
             ],

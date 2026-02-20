@@ -15,7 +15,7 @@ export const Footer: GlobalConfig = {
   slug: 'footer',
   label: {
     en: 'Footer',
-    de: 'Footer',
+    de: 'Fußzeile',
   },
   access: {
     read: () => true,
@@ -42,7 +42,7 @@ export const Footer: GlobalConfig = {
     {
       name: 'Folgen_Sie_uns',
       type: 'text',
-      label:  {
+      label: {
         en: "Follow us",
         de: "Folgen Sie uns"
       },
@@ -60,7 +60,7 @@ export const Footer: GlobalConfig = {
         {
           name: 'social_icon',
           type: 'upload',
-          label:  {
+          label: {
             en: "Social Icons",
             de: "Social Icons"
           },
@@ -132,7 +132,7 @@ export const Footer: GlobalConfig = {
     {
       name: 'privacy',
       type: 'array',
-      label:  {
+      label: {
         en: "Privacy titles",
         de: "Datenschutz Titel"
       },
@@ -153,7 +153,7 @@ export const Footer: GlobalConfig = {
       name: 'copyright',
       type: 'text',
       label: {
-          en: "Copyright text",
+        en: "Copyright text",
         de: "Copyright Text"
       },
       required: false,
