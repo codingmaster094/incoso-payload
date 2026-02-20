@@ -1,7 +1,5 @@
 import type { CollectionConfig } from 'payload'
-
 import { authenticated } from '../../access/authenticated'
-import { isAdminField } from '../../access/roleBased'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -42,7 +40,7 @@ export const Users: CollectionConfig = {
       name: 'roles',
       type: 'select',
       hasMany: true,
-      options: ['admin', 'editor', 'author'],
+      options: ['admin', 'editor'],
       required: true,
       defaultValue: ['admin'],
       saveToJWT: true,
@@ -75,7 +73,7 @@ export const Users: CollectionConfig = {
           if (!req?.user) {
             return {
               ...data,
-              roles: ['author'],
+              roles: ['editor'],
             }
           }
         }
