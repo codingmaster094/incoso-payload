@@ -43,7 +43,6 @@ export const News: CollectionConfig<'news'> = {
     read: (args) => isAdmin(args) || isEditor(args),
     update: (args) => isAdmin(args) || isEditor(args),
   },
-
   defaultPopulate: {
     title: true,
     slug: true,
