@@ -47,9 +47,8 @@ export const Users: CollectionConfig = {
       defaultValue: ['admin'],
       saveToJWT: true,
       access: {
-        // Only admins may set roles in the admin UI
-        create: isAdminField,
-        update: isAdminField,
+        create: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
+        update: ({ req }) => Boolean((req.user as any)?.roles?.includes('admin')),
       },
     },
   ],
