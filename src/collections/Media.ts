@@ -16,6 +16,16 @@ const dirname = path.dirname(filename)
 
 export const Media: CollectionConfig = {
   slug: 'media',
+  labels: {
+    singular: {
+      en: "Media",
+      de: "Medien"
+    },
+    plural: {
+      en: "Media",
+      de: "Medien"
+    },
+  },
   folders: true,
   access: {
     admin: authenticated,
