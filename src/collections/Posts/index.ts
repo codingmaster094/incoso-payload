@@ -11,7 +11,7 @@ import {
 } from '@payloadcms/richtext-lexical'
 
 import { authenticated } from '../../access/authenticated'
-import { isAdmin, isEditor } from '../../access/roleBased'
+import { isAdmin, isAuthor, isEditor } from '../../access/roleBased'
 import { Banner } from '../../blocks/Banner/config'
 import { Code } from '../../blocks/Code/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
@@ -38,11 +38,11 @@ export const Posts: CollectionConfig<'posts'> = {
     delete: isAdmin,
     read: (args) => {
       if (args.req.user) {
-        return isAdmin(args) || isEditor(args)
+        return isAdmin(args) || isEditor(args) || isAuthor(args)
       }
       return authenticatedOrPublished(args)
     },
-    update: (args) => isAdmin(args) || isEditor(args),
+    update: (args) => isAdmin(args) || isEditor(args) || isAuthor(args),
   },
   // This config controls what's populated by default when a post is referenced
   // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property

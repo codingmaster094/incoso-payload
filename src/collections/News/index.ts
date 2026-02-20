@@ -11,7 +11,7 @@ import {
 } from '@payloadcms/richtext-lexical'
 
 import { authenticated } from '../../access/authenticated'
-import { isAdmin, isEditor } from '../../access/roleBased'
+import { isAdmin, isAuthor, isEditor } from '../../access/roleBased'
 import { Banner } from '../../blocks/Banner/config'
 import { Code } from '../../blocks/Code/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
@@ -43,11 +43,11 @@ export const News: CollectionConfig<'news'> = {
     delete: isAdmin,
     read: (args) => {
       if (args.req.user) {
-        return isAdmin(args) || isEditor(args)
+        return isAdmin(args) || isEditor(args) || isAuthor(args)
       }
       return authenticatedOrPublished(args)
     },
-    update: (args) => isAdmin(args) || isEditor(args),
+    update: (args) => isAdmin(args) || isEditor(args) || isAuthor(args),
   },
   defaultPopulate: {
     title: true,

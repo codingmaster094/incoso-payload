@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../access/authenticated'
-import { isAdmin, isEditor } from '../access/roleBased'
+import { isAdmin, isAuthor, isEditor } from '../access/roleBased'
 import { slugField } from 'payload'
 
 export const Categories: CollectionConfig = {
@@ -11,7 +11,7 @@ export const Categories: CollectionConfig = {
     create: isAdmin,
     delete: isAdmin,
     read: () => true,
-    update: (args) => isAdmin(args) || isEditor(args),
+    update: (args) => isAdmin(args) || isEditor(args) || isAuthor(args),
   },
   admin: {
     useAsTitle: 'title',

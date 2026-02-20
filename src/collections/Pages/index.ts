@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
-import { isAdmin, isEditor } from '../../access/roleBased'
+import { isAdmin, isAuthor, isEditor } from '../../access/roleBased'
 import { Archive } from '../../blocks/ArchiveBlock/config'
 import { CallToAction } from '../../blocks/CallToAction/config'
 import { Content } from '../../blocks/Content/config'
@@ -39,11 +39,11 @@ export const Pages: CollectionConfig<'pages'> = {
     delete: isAdmin,
     read: (args) => {
       if (args.req.user) {
-        return isAdmin(args) || isEditor(args)
+        return isAdmin(args) || isEditor(args) || isAuthor(args)
       }
       return authenticatedOrPublished(args)
     },
-    update: isAdmin || isEditor,
+    update: isAdmin || isEditor || isAuthor,
   },
   defaultPopulate: {
     title: true,

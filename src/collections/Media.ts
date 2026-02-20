@@ -9,7 +9,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 import { authenticated } from '../access/authenticated'
-import { isAdmin, isEditor } from '../access/roleBased'
+import { isAdmin, isAuthor, isEditor } from '../access/roleBased'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -19,10 +19,10 @@ export const Media: CollectionConfig = {
   folders: true,
   access: {
     admin: authenticated,
-    create: (args) => isAdmin(args) || isEditor(args),
+    create: (args) => isAdmin(args) || isEditor(args) || isAuthor(args),
     delete: isAdmin,
     read: () => true,
-    update: (args) => isAdmin(args) || isEditor(args),
+    update: (args) => isAdmin(args) || isEditor(args) || isAuthor(args),
   },
   fields: [
     {
