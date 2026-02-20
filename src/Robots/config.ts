@@ -1,12 +1,11 @@
 import type { GlobalConfig } from 'payload'
-import { authenticated } from '@/access/authenticated'
-import { getServerSideURL } from '@/utilities/getURL'
-
+import { getServerSideURL } from '../utilities/getURL'
+import { isAdmin, isAuthor, isEditor } from '../access/roleBased'
 export const Robots: GlobalConfig = {
     slug: 'robots',
     access: {
         read: () => true,
-        update: authenticated,
+        update: (args) => isAdmin(args) || isEditor(args) || isAuthor(args),
     },
     admin: {
         group: 'SEO',
