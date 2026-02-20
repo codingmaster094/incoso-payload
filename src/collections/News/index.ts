@@ -37,6 +37,16 @@ import { slugField } from 'payload'
 
 export const News: CollectionConfig<'news'> = {
   slug: 'news',
+  labels: {
+    singular: {
+      en: 'News',
+      de: 'Neuigkeit',
+    },
+    plural: {
+      en: 'News',
+      de: 'Neuigkeiten',
+    },
+  },
   access: {
     admin: authenticated,
     create: isAdmin,
@@ -90,6 +100,10 @@ export const News: CollectionConfig<'news'> = {
       type: 'tabs',
       tabs: [
         {
+          label: {
+            en: 'Box Details',
+            de: 'Box-Details',
+          },
           fields: [
             {
               name: 'heroImage',
@@ -119,9 +133,12 @@ export const News: CollectionConfig<'news'> = {
               required: false,
             },
           ],
-          label: 'box details',
         },
         {
+          label: {
+            en: 'Layout',
+            de: 'Layout',
+          },
           fields: [
             {
               name: 'layout',
@@ -133,9 +150,12 @@ export const News: CollectionConfig<'news'> = {
               },
             },
           ],
-          label: 'layout',
         },
         {
+          label: {
+            en: 'Content',
+            de: 'Inhalt',
+          },
           fields: [
             {
               name: 'Guterncontent',
@@ -171,9 +191,12 @@ export const News: CollectionConfig<'news'> = {
               lexicalFieldName: 'Guterncontent',
             }),
           ],
-          label: 'Content',
         },
         {
+          label: {
+            en: 'Meta',
+            de: 'Meta',
+          },
           fields: [
             {
               name: 'relatedPosts',
@@ -192,10 +215,12 @@ export const News: CollectionConfig<'news'> = {
               relationTo: 'news',
             },
           ],
-          label: 'Meta',
         },
         {
-          label: 'User Details',
+          label: {
+            en: 'User Details',
+            de: 'Benutzerdetails',
+          },
           fields: [
             {
               name: 'userdetails',
@@ -217,7 +242,10 @@ export const News: CollectionConfig<'news'> = {
         },
         {
           name: 'meta',
-          label: 'SEO',
+          label: {
+            en: 'SEO',
+            de: 'SEO',
+          },
           fields: [
             OverviewField({
               titlePath: 'meta.title',
@@ -255,7 +283,6 @@ export const News: CollectionConfig<'news'> = {
             }),
           ],
         },
-
       ],
     },
     {

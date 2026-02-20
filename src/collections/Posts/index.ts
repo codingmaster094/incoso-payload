@@ -32,6 +32,16 @@ import { News_Hero_Section } from '../../blocks/News_hero_section/config'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
+  labels: {
+    singular: {
+      en: 'Post',
+      de: 'Beitrag',
+    },
+    plural: {
+      en: 'Posts',
+      de: 'Beiträge',
+    },
+  },
   access: {
     admin: authenticated,
     create: isAdmin,
@@ -109,7 +119,10 @@ export const Posts: CollectionConfig<'posts'> = {
               required: false,
             },
           ],
-          label: 'box details',
+          label: {
+            en: 'Box Details',
+            de: 'Box-Details',
+          },
         },
         {
           fields: [
@@ -123,7 +136,10 @@ export const Posts: CollectionConfig<'posts'> = {
               },
             },
           ],
-          label: 'layout',
+          label: {
+            en: 'Layout',
+            de: 'Layout',
+          },
         },
         {
           fields: [
@@ -156,9 +172,11 @@ export const Posts: CollectionConfig<'posts'> = {
               lexicalFieldName: 'Guterncontent',
             }),
           ],
-          label: 'Content',
+          label: {
+            en: 'Content',
+            de: 'Inhalt',
+          },
         },
-
         {
           fields: [
             {
@@ -187,11 +205,17 @@ export const Posts: CollectionConfig<'posts'> = {
               relationTo: 'categories',
             },
           ],
-          label: 'Meta',
+          label: {
+            en: 'Meta',
+            de: 'Meta',
+          },
         },
         {
           name: 'meta',
-          label: 'SEO',
+          label: {
+            en: 'SEO',
+            de: 'SEO',
+          },
           fields: [
             OverviewField({
               titlePath: 'meta.title',

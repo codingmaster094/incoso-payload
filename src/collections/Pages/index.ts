@@ -32,6 +32,16 @@ import { Latest_news_without_img } from '@/blocks/Latest_news_without_img/config
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
+  labels: {
+    singular: {
+      en: 'Page',
+      de: 'Seite',
+    },
+    plural: {
+      en: 'Pages',
+      de: 'Seiten',
+    },
+  },
 
   access: {
     admin: authenticated,
@@ -111,11 +121,17 @@ export const Pages: CollectionConfig<'pages'> = {
               },
             },
           ],
-          label: 'Content',
+          label: {
+            en: 'Content',
+            de: 'Inhalt',
+          },
         },
         {
           name: 'meta',
-          label: 'SEO',
+          label: {
+            en: 'SEO',
+            de: 'SEO',
+          },
           fields: [
             OverviewField({
               titlePath: 'meta.title',
