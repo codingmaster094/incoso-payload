@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
-import { isAdmin, isEditor, isAdminField } from '../../access/roleBased'
+import { isAdminField } from '../../access/roleBased'
 
 export const Users: CollectionConfig = {
   slug: 'users',
