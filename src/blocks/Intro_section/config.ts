@@ -6,20 +6,32 @@ export const Intro_section: Block = {
   imageURL: '/block-previews/intro_section.png',
   imageAltText: 'Intro Section',
   labels: {
-    singular: 'Einleitung',
-    plural: 'Einleitung',
+    singular: {
+      en: "Introduction",
+      de: "Einleitung"
+    },
+    plural: {
+      en: "Introduction Sections",
+      de: "Einleitung Sektionen"
+    },
   },
 
   fields: [
     {
       name: 'main_title',
       type: 'text',
-      label: 'Main Title',
+      label: {
+        en: "Main Title",
+        de: "Haupttitel"
+      },
     },
     {
       name: 'subtitle',
       type: 'text',
-      label: 'Sub Title',
+      label: {
+        en: "Sub Title",
+        de: "Untertitel"
+      },
     },
     {
       name: 'description1',
@@ -32,7 +44,10 @@ export const Intro_section: Block = {
           HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
         ],
       }),
-      label: 'First Description',
+      label: {
+        en: "First Description",
+        de: "Erste Beschreibung"
+      },
     },
     {
       name: 'description2',
@@ -45,7 +60,10 @@ export const Intro_section: Block = {
           HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
         ],
       }),
-      label: 'Second Description',
+      label: {
+        en: "Second Description",
+        de: "Zweite Beschreibung"
+      },
     },
   ],
 }

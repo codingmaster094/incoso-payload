@@ -12,21 +12,33 @@ export const Unsere_Boxes: Block = {
   imageAltText: 'Unsere Boxes preview',
  
   interfaceName: 'UnsereBoxesBlock',
-  labels: {
-    singular: 'Unsere Boxes Section',
-    plural: 'Unsere Boxes Sections',
+   labels: {
+    singular: {
+      en: "Our boxing section",
+      de: "Unsere Boxen-Sektion"
+    },
+    plural: {
+      en: "Our boxing sections",
+      de: "Unsere Boxen-Sektionen"
+    },
   },
   fields: [
     {
       name: 'boxes',
       type: 'array',
-      label: 'Right Left Boxes',
+      label: {
+        en: "Right Left Boxes",
+        de: "Rechts Links Boxen"
+      },
       required: false,
       fields: [
         {
           name: 'layout',
           type: 'select',
-          label: 'Image Position',
+          label: {
+            en: "Image Position",
+            de: "Bild Position"
+          },
           defaultValue: 'right',
           options: [
             { label: 'Image Right', value: 'right' },
@@ -37,12 +49,18 @@ export const Unsere_Boxes: Block = {
           name: 'title',
           type: 'text',
           required: false,
-          label: 'Main Box Title',
+          label: {
+            en: "Main Box Title",
+            de: "Haupt Box Überschrift"
+          },
         },
         {
           name: 'unsere_boxesimage',
           type: 'upload',
-          label: 'Unsere Boxes Image',
+          label: {
+            en: "Unsere Boxes Image",
+            de: "Unsere Boxen Bild"
+          },
           relationTo: 'media',
           required: false,
         },
@@ -50,7 +68,10 @@ export const Unsere_Boxes: Block = {
           name: 'heading',
           type: 'text',
           required: false,
-          label: 'Heading',
+          label: {
+            en: "Heading",
+            de: "Überschrift"
+          },
         },
         {
           name: 'boxDescription',
@@ -63,27 +84,42 @@ export const Unsere_Boxes: Block = {
               HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
             ],
           }),
-          label: 'Box Description',
+          label: {
+            en: "Box Description",
+            de: "Box Beschreibung"
+          },
         },
         {
           name: 'boxbutton',
           type: 'group',
-          label: 'Button',
+          label: {
+            en: "Button",
+            de: "Knopf"
+          },
           fields: [
             {
               name: 'label',
               type: 'text',
-              label: 'Box Button Label',
+              label: {
+                en: "Button Label",
+                de: "Knopf Beschriftung"
+              },
             },
             {
               name: 'url',
               type: 'text',
-              label: 'Box Button Url',
+              label: {
+                en: "Button Url",
+                de: "Knopf Url"
+              },
             },
             {
               name: 'target',
               type: 'select',
-              label: 'Box Button Target',
+              label: {
+                en: "Button Target",
+                de: "Knopf Ziel"
+              },
               options: [
                 { label: 'Same Tab', value: '_self' },
                 { label: 'New Tab', value: '_blank' },

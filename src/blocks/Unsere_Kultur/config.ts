@@ -12,9 +12,15 @@ export const Unsere_Kultur: Block = {
   imageAltText: 'Unsere Kultur preview',
  
   interfaceName: 'unsere_kultur',
-  labels: {
-    singular: 'Unsere Kultur',
-    plural: 'Unsere Kulturen',
+   labels: {
+    singular: {
+      en: "Our culture",
+      de: "Unsere Kultur"
+    },
+    plural: {
+      en: "Our cultures",
+      de: "Unsere Kulturen"
+    },
   },
   fields: [
     {
@@ -31,12 +37,18 @@ export const Unsere_Kultur: Block = {
     {
       name: 'unsere_kulturHeading',
       type: 'text',
-      label: 'Unsere Kulturen Heading',
+      label: {
+        en: "Our culture Heading",
+        de: "Unsere Kultur Überschrift"
+      },
     },
     {
       name: 'unsere_kulturimage',
       type: 'upload',
-      label: 'Unsere Kulturen Image',
+      label: {
+        en: "Our culture Image",
+        de: "Unsere Kultur Bild"
+      },
       relationTo: 'media',
       required: false,
     },
@@ -44,7 +56,10 @@ export const Unsere_Kultur: Block = {
     {
       name: 'boxHeading1',
       type: 'text',
-      label: 'Box Heading 1',
+      label: {
+        en: "Box Heading 1",
+        de: "Box Überschrift 1"
+      },
     },
     {
       name: 'unsere_kulturDescription',
@@ -57,32 +72,50 @@ export const Unsere_Kultur: Block = {
           HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
         ],
       }),
-      label: 'Unsere Kulturen Description',
+      label: {
+        en: "Our culture Description",
+        de: "Unsere Kultur Beschreibung"
+      },
     },
     {
       name: 'boxHeading2',
       type: 'text',
-      label: 'Box Heading 2',
+      label: {
+        en: "Box Heading 2",
+        de: "Box Überschrift 2"
+      },
     },
     {
       name: 'boxbutton1',
       type: 'group',
-      label: 'Button 1',
+      label: {
+        en: "Button 1",
+        de: "Knopf 1"
+      },
       fields: [
         {
           name: 'label',
           type: 'text',
-          label: 'Box Button Label',
+          label: {
+            en: "Button Label",
+            de: "Knopf Beschriftung"
+          },
         },
         {
           name: 'url',
           type: 'text',
-          label: 'Box Button Url',
+          label: {
+            en: "Button Url",
+            de: "Knopf Url"
+          },
         },
         {
           name: 'target',
           type: 'select',
-          label: 'Box Button Target',
+          label: {
+            en: "Button Target",
+            de: "Knopf Ziel"
+          },
           options: [
             { label: 'Same Tab', value: '_self' },
             { label: 'New Tab', value: '_blank' },
@@ -94,22 +127,34 @@ export const Unsere_Kultur: Block = {
     {
       name: 'boxbutton2',
       type: 'group',
-      label: 'Button 2',
+      label: {
+        en: "Button 2",
+        de: "Knopf 2"
+      },
       fields: [
         {
           name: 'label',
           type: 'text',
-          label: 'Box Button Label',
+          label: {
+            en: "Button Label",
+            de: "Knopf Beschriftung"
+          },
         },
         {
           name: 'url',
           type: 'text',
-          label: 'Box Button Url',
+          label: {
+            en: "Button Url",
+            de: "Knopf Url"
+          },
         },
         {
           name: 'target',
           type: 'select',
-          label: 'Box Button Target',
+          label: {
+            en: "Button Target",
+            de: "Knopf Ziel"
+          },
           options: [
             { label: 'Same Tab', value: '_self' },
             { label: 'New Tab', value: '_blank' },

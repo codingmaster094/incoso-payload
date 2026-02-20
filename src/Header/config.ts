@@ -6,6 +6,10 @@ import slugify from 'slugify'
 
 export const Header: GlobalConfig = {
   slug: 'header',
+  label: {
+    en: 'Header',
+    de: 'Kopfzeile',
+  },
   access: {
     read: () => true,
   },
@@ -14,7 +18,10 @@ export const Header: GlobalConfig = {
       name: 'title',
       type: 'text',
       required: false,
-      label: 'title',
+      label: {
+        en: 'Title',
+        de: 'Titel',
+      },
     },
     {
       name: 'slug',
@@ -24,7 +31,10 @@ export const Header: GlobalConfig = {
       admin: {
         readOnly: true,
       },
-      label: 'slug',
+      label: {
+        en: 'Slug',
+        de: 'Slug',
+      },
       hooks: {
         beforeValidate: [
           ({ siblingData, value }) => {
@@ -36,23 +46,32 @@ export const Header: GlobalConfig = {
         ],
       },
     },
-      {
+    {
       name: 'logo_title',
       type: 'text',
       required: false,
-      label: 'Logo title',
+      label: {
+        en: 'Logo title',
+        de: 'Logo title',
+      },
     },
     {
       name: 'Header_Logo',
       type: 'upload',
-      label: 'logo',
+      label: {
+        en: 'Logo',
+        de: 'Logo',
+      },
       relationTo: 'media',
       required: false,
     },
     {
       name: 'Mobile_Header_Logo',
       type: 'upload',
-      label: 'mobile logo',
+      label: {
+        en: 'Mobile logo',
+        de: 'Mobile logo',
+      },
       relationTo: 'media',
       required: false,
     },
@@ -74,7 +93,10 @@ export const Header: GlobalConfig = {
     },
     {
       name: 'submenus',
-      label: 'sub Navigation',
+      label: {
+        en: 'Sub Navigation',
+        de: 'Sub Navigation',
+      },
       type: 'array',
       fields: [
         {
@@ -85,11 +107,17 @@ export const Header: GlobalConfig = {
         {
           name: 'link',
           type: 'text',
-          label: 'Link',
+          label: {
+            en: "Link",
+            de: "Link"
+          },
         },
         {
           name: 'children',
-          label: 'Sub Menu',
+          label: {
+            en: 'Sub Menu',
+            de: 'Sub Menu',
+          },
           type: 'array',
           fields: [
             {
@@ -100,10 +128,13 @@ export const Header: GlobalConfig = {
             {
               name: 'link',
               type: 'text',
-            },
+              },
             {
               name: 'children',
-              label: 'Sub Menu',
+              label: {
+                en: 'Sub Menu',
+                de: 'Sub Menu',
+              },
               type: 'array',
               fields: [
                 {
@@ -114,6 +145,10 @@ export const Header: GlobalConfig = {
                 {
                   name: 'link',
                   type: 'text',
+                  label: {
+                    en: "Link",
+                    de: "Link"
+                  },
                 },
               ],
             },

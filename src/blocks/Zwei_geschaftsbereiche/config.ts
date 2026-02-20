@@ -13,25 +13,40 @@ export const Zwei_geschaftsbereiche: Block = {
  
   interfaceName: 'zwei_geschaftsbereiche',
   labels: {
-    singular: 'Zwei Geschaftsbereiche',
-    plural: 'Zwei Geschaftsbereiche',
+    singular: {
+      en: "Two business areas",
+      de: "Zwei Geschäftsbereiche"
+    },
+    plural: {
+      en: "Two business areas sections",
+      de: "Zwei Geschäftsbereiche Sektionen"
+    },
   },
   fields: [
     {
       name: 'GeschaftsbereicheHeading',
       type: 'text',
-      label: 'Zwei Geschaftsbereiche Heading',
+      label: {
+        en: "Two business areas Heading",
+        de: "Zwei Geschäftsbereiche Überschrift"
+      },
     },
     {
       name: 'boxes',
       type: 'array',
-      label: 'Right Left Boxes',
+      label: {
+        en: "Two business areas boxes",
+        de: "Zwei Geschäftsbereiche Boxen"
+      },
       required: true,
       fields: [
         {
           name: 'Image',
           type: 'upload',
-          label: 'Image',
+          label: {
+            en: "Image",
+            de: "Bild"
+          },
           relationTo: 'media',
           required: false,
         },
@@ -39,7 +54,10 @@ export const Zwei_geschaftsbereiche: Block = {
           name: 'heading',
           type: 'text',
           required: true,
-          label: 'Heading',
+          label: {
+            en:'Heading',
+            de:"Überschrift"
+          },
         },
         {
           name: 'Description',
@@ -52,7 +70,10 @@ export const Zwei_geschaftsbereiche: Block = {
               HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
             ],
           }),
-          label: 'Description',
+          label: {
+            en: "Description",
+            de: "Beschreibung"
+          },
         },
       ],
     },

@@ -6,56 +6,89 @@ export const News_content_Kosten: Block = {
   slug: 'news_content_kosten',
   interfaceName: 'NewsContentKostenBlock',
   labels: {
-    singular: 'News Content Kosten',
-    plural: 'News Content Kosten',
+    singular: {
+      en: "News Content Kosten",
+      de: "Nachrichten Inhalt Kosten"
+    },
+    plural: {
+      en: "News Content Kosten",
+      de: "Nachrichten Inhalt Kosten"
+    },
   },
   fields: [
     {
       name: 'heading',
       type: 'text',
-      label: 'Heading',
+      label: {
+        en:'Title',
+        de:'Titel'
+      },
     },
     {
       name: 'boxes',
       type: 'array',
-      label: 'Kosten Items',
+      label: {
+        en:'Kosten Items',
+        de:'Kosten Items'
+      },
       fields: [
         {
           name: 'Kosten_boxesimage',
           type: 'upload',
-          label: 'Kosten Boxes Image',
+          label: {
+            en:'Kosten Boxes Image',
+            de:'Kosten Boxes Image'
+          },
           relationTo: 'media',
           required: false,
         },
         {
           name: 'Kosten_heading',
           type: 'text',
-          label: 'Heading',
+          label: {
+            en:'Heading',
+            de:'Überschrift'
+          },
         },
         {
           name: 'Kosten_sub_heading',
           type: 'text',
-          label: 'Sub Heading',
+          label: {
+            en:'Sub Heading',
+            de:'Unterüberschrift'
+          },
         },
         {
           name: 'boxbutton',
           type: 'group',
-          label: 'Button',
+          label: {
+            en:'Button',
+            de:'Knopf'
+          },
           fields: [
             {
               name: 'label',
               type: 'text',
-              label: 'Box Button Label',
+              label: {
+                en:'Button Label',
+                de:'Knopf Beschriftung'
+              },
             },
             {
               name: 'url',
               type: 'text',
-              label: 'Box Button Url',
+              label: {
+                en:'Button Url',
+                de:'Knopf Url'
+              },
             },
             {
               name: 'target',
               type: 'select',
-              label: 'Box Button Target',
+              label: {
+                en:'Button Target',
+                de:'Knopf Ziel'
+              },
               options: [
                 { label: 'Same Tab', value: '_self' },
                 { label: 'New Tab', value: '_blank' },

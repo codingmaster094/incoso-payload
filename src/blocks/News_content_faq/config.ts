@@ -11,24 +11,39 @@ export const News_content_faq: Block = {
   slug: 'news_content_faq',
   interfaceName: 'NewsContentFaqBlock',
   labels: {
-    singular: 'News Content FAQ',
-    plural: 'News Content FAQ',
+    singular: {
+      en: "News Content FAQ",
+      de: "Nachrichten Inhalt FAQ"
+    },
+    plural: {
+      en: "News Content FAQ",
+      de: "Nachrichten Inhalt FAQ"
+    },
   },
   fields: [
     {
       name: 'heading',
       type: 'text',
-      label: 'Heading',
+      label: {
+        en:'Title',
+        de:'Titel'
+      },
     },
     {
       name: 'accordian',
       type: 'array',
-      label: 'FAQ Items',
+      label: {
+        en:'FAQ Items',
+        de:'Häufig gestellte Fragen'
+      },
       fields: [
         {
           name: 'question',
           type: 'text',
-          label: 'Question',
+          label: {
+            en:'Question',
+            de:'Frage'
+          },
         },
         {
           name: 'answer',
@@ -41,7 +56,10 @@ export const News_content_faq: Block = {
               HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
             ],
           }),
-          label: 'Answer',
+          label: {
+            en:'Answer',
+            de:'Antwort'
+          },
         },
       ],
     },

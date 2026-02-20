@@ -12,21 +12,33 @@ export const Fuhrung_Governance: Block = {
   imageAltText: 'Führung Governance',
   interfaceName: 'FuhrungGovernanceBlock',
   labels: {
-    singular: 'Führung Governance',
-    plural: 'Führung Governance Sections',
+      singular: {
+        en: "Leadership Governance",
+      de: "Führung Governance"
+    },
+    plural: {
+      en: "Leadership Governance Sections",
+      de: "Führung Governance Sektionen"
+    },
   },
   fields: [
     {
       name: 'boxes',
       type: 'array',
-      label: 'Führung Governance Boxes',
+      label: {
+        en: "Leadership Governance Boxes",
+        de: "Führung Governance Boxen"
+      },
       required: true,
       fields: [
         {
           name: 'heading',
           type: 'text',
           required: true,
-          label: 'Heading',
+          label: {
+            en: "Heading",
+            de: "Überschrift"
+          },
         },
         {
           name: 'boxDescription',
@@ -39,27 +51,42 @@ export const Fuhrung_Governance: Block = {
               HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
             ],
           }),
-          label: 'Box Description',
+          label: {
+            en: "Box Description",
+            de: "Box Beschreibung"
+          },
         },
         {
           name: 'boxbutton',
           type: 'group',
-          label: 'Button',
+          label: {
+            en: "Button",
+            de: "Button"
+          },
           fields: [
             {
               name: 'label',
               type: 'text',
-              label: 'Box Button Label',
+              label: {
+                en: "Box Button Label",
+                de: "Box Button Label"
+              },
             },
             {
               name: 'url',
               type: 'text',
-              label: 'Box Button Url',
+              label: {
+                en: "Box Button Url",
+                de: "Box Button Url"
+              },
             },
             {
               name: 'target',
               type: 'select',
-              label: 'Box Button Target',
+              label: {
+                en: "Box Button Target",
+                de: "Box Button Target"
+              },
               options: [
                 { label: 'Same Tab', value: '_self' },
                 { label: 'New Tab', value: '_blank' },

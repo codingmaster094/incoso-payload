@@ -14,8 +14,14 @@ export const News_Hero_Section: Block = {
   imageAltText: 'News banner',
 
   labels: {
-    singular: 'Hero Image',
-    plural: 'Hero Images',
+    singular: {
+      en: "Hero Image",
+      de: "Hero-Bild"
+    },
+    plural: {
+      en: "Hero Images",
+      de: "Hero-Bilder"
+    },
   },
 
   fields: [
@@ -27,12 +33,18 @@ export const News_Hero_Section: Block = {
     {
       name: 'featuredTag',
       type: 'text',
-      label: 'Featured Tag',
+      label: {
+        en: "Featured Tag",
+        de: "Vorgestellter Tag"
+      },
     },
     {
       name: 'featuredHeading',
       type: 'text',
-      label: 'Featured Heading',
+      label: {
+        en: "Featured Heading",
+        de: "Vorgestellte Überschrift"
+      },
     },
     {
       name: 'featuredcontent',
@@ -45,7 +57,10 @@ export const News_Hero_Section: Block = {
           HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
         ],
       }),
-      label: 'featured Description',
+      label: {
+        en: "Featured Description",
+        de: "Vorgestellte Beschreibung"
+      },
     },
   ],
 }

@@ -4,15 +4,24 @@ import { Block } from 'payload'
 export const News_content_CTA: Block = {
   slug: 'news_content_cta',
   labels: {
-    singular: 'News CTA',
-    plural: 'News CTA',
+    singular: {
+      en: "News CTA",
+      de: "Nachrichten CTA"
+    },
+    plural: {
+      en: "News CTA",
+      de: "Nachrichten CTA"
+    },
   },
 
   fields: [
     {
       name: 'heading',
       type: 'text',
-      label: 'Title',
+      label: {
+        en:'Title',
+        de:'Titel'
+      },
     },
     {
       name: 'content',
@@ -34,22 +43,34 @@ export const News_content_CTA: Block = {
     {
       name: 'button',
       type: 'group',
-      label: 'Button',
+      label: {
+        en:'Button',
+        de:'Knopf'
+      },
       fields: [
         {
           name: 'label',
           type: 'text',
-          label: 'Button Label',
+          label: {
+            en:'Button Label',
+            de:'Knopf Beschriftung'
+          },
         },
         {
           name: 'url',
           type: 'text',
-          label: 'Button Url',
+          label: {
+            en:'Button Url',
+            de:'Knopf Url'
+          },
         },
         {
           name: 'target',
           type: 'select',
-          label: 'Button Target',
+          label: {
+            en:'Button Target',
+            de:'Knopf Ziel'
+          },
           options: [
             { label: 'Same Tab', value: '_self' },
             { label: 'New Tab', value: '_blank' },

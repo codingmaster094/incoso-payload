@@ -12,26 +12,41 @@ export const Was_Wir_Tun: Block = {
   imageAltText: 'Was Wir Tun',
   interfaceName: 'WasWirTunBlock',
   labels: {
-    singular: 'Was Wir Tun Section',
-    plural: 'Was Wir Tun Sections',
+    singular: {
+      en: "What we do",
+      de: "Was wir tun"
+    },
+    plural: {
+      en: "What we do sections",
+      de: "Was wir tun Sektionen"
+    },
   },
   fields: [
     {
       name: 'heading',
       type: 'text',
       required: false,
-      label: 'Main Heading',
+      label: {
+        en: "Main Heading",
+        de: "Haupt Überschrift"
+      },
     },
     {
       name: 'boxes',
       type: 'array',
-      label: 'Was Wir Tun Boxes',
+      label: {
+        en: "What we do boxes",
+        de: "Was wir tun Boxen"
+      },
       required: false,
       fields: [
         {
           name: 'was_wir_tunimage',
           type: 'upload',
-          label: 'Was Wir Tun Image',
+          label: {
+            en: "What we do image",
+            de: "Was wir tun Bild"
+          },
           relationTo: 'media',
           required: false,
         },
@@ -39,7 +54,10 @@ export const Was_Wir_Tun: Block = {
           name: 'heading',
           type: 'text',
           required: false,
-          label: 'Heading',
+          label: {
+            en: "Heading",
+            de: "Überschrift"
+          },
         },
         {
           name: 'boxDescription',
@@ -52,27 +70,42 @@ export const Was_Wir_Tun: Block = {
               HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
             ],
           }),
-          label: 'Box Description',
+          label: {
+            en: "Box Description",
+            de: "Box Beschreibung"
+          },
         },
         {
           name: 'boxbutton',
           type: 'group',
-          label: 'Button',
+          label: {
+            en: "Button",
+            de: "Knopf"
+          },
           fields: [
             {
               name: 'label',
               type: 'text',
-              label: 'Box Button Label',
+              label: {
+                en: "Button Label",
+                de: "Knopf Beschriftung"
+              },
             },
             {
               name: 'url',
               type: 'text',
-              label: 'Box Button Url',
+              label: {
+                en: "Button Url",
+                de: "Knopf Url"
+              },
             },
             {
               name: 'target',
               type: 'select',
-              label: 'Box Button Target',
+              label: {
+                en: "Button Target",
+                de: "Knopf Ziel"
+              },
               options: [
                 { label: 'Same Tab', value: '_self' },
                 { label: 'New Tab', value: '_blank' },

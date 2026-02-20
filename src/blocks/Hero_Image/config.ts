@@ -6,8 +6,14 @@ export const Hero_Image: Block = {
   imageAltText: 'Hero banner',
  
   labels: {
-    singular: 'Hero Image',
-    plural: 'Hero Images',
+    singular: {
+      en: "Hero Image",
+      de: "Hero Bild"
+    },
+    plural: {
+      en: "Hero Images",
+      de: "Hero Bilder"
+    },
   },
 
   fields: [

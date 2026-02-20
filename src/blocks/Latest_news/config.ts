@@ -8,15 +8,24 @@ export const Latest_news: Block = {
 
   interfaceName: 'LatestNewsBlock',
   labels: {
-    singular: 'Aktuelle Nachrichten',
-    plural: 'Aktuelle Nachrichten',
+    singular: {
+      en: "Latest News",
+      de: "Aktuelle Nachrichten"
+    },
+    plural: {
+      en: "Latest News",
+      de: "Aktuelle Nachrichten"
+    },
   },
   fields: [
     {
       name: 'heading',
       type: 'text',
       required: false,
-      label: 'Main Heading',
+      label: {
+        en: "Main Heading",
+        de: "Hauptüberschrift"
+      },
     },
 
     {
@@ -26,27 +35,42 @@ export const Latest_news: Block = {
       hasMany: true,
       required: true,
       maxRows: 3,
-      label: 'Select Latest News',
+      label: {
+        en: "Select Latest News",
+        de: "Aktuelle Nachrichten auswählen"
+      },
     },
     {
       name: 'button',
       type: 'group',
-      label: 'Button',
+      label: {
+        en: "Button",
+        de: "Knopf"
+      },
       fields: [
         {
           name: 'label',
           type: 'text',
-          label: 'Button Label',
+          label: {
+            en: "Button Label",
+            de: "Knopf Beschriftung"
+          },
         },
         {
           name: 'url',
           type: 'text',
-          label: 'Button Url',
+          label: {
+            en: "Button Url",
+            de: "Knopf Url"
+          },
         },
         {
           name: 'target',
           type: 'select',
-          label: 'Button Target',
+          label: {
+            en: "Button Target",
+            de: "Knopf Ziel"
+          },
           options: [
             { label: 'Same Tab', value: '_self' },
             { label: 'New Tab', value: '_blank' },

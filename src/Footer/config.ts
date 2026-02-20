@@ -13,6 +13,10 @@ import {
 
 export const Footer: GlobalConfig = {
   slug: 'footer',
+  label: {
+    en: 'Footer',
+    de: 'Footer',
+  },
   access: {
     read: () => true,
   },
@@ -20,53 +24,80 @@ export const Footer: GlobalConfig = {
     {
       name: 'Kontakt_zu_Incoso',
       type: 'text',
-      label: 'Kontakt zu Incoso',
+      label: {
+        en: "Contact to Incoso",
+        de: "Kontakt zu Incoso"
+      },
       required: false,
     },
     {
       name: 'Kontaktformular',
       type: 'text',
-      label: 'Kontaktformular',
+      label: {
+        en: "Contact Form",
+        de: "Kontaktformular"
+      },
       required: false,
     },
     {
       name: 'Folgen_Sie_uns',
       type: 'text',
-      label: 'Folgen Sie uns',
+      label:  {
+        en: "Follow us",
+        de: "Folgen Sie uns"
+      },
       required: false,
     },
     {
       name: 'socials',
       type: 'array',
-      label: 'Social Media',
+      label: {
+        en: "Social Media",
+        de: "Social Media"
+      },
       required: false,
       fields: [
         {
           name: 'social_icon',
           type: 'upload',
-          label: 'Social Icons',
+          label:  {
+            en: "Social Icons",
+            de: "Social Icons"
+          },
           relationTo: 'media',
           required: false,
         },
         {
           name: 'social_url',
           type: 'group',
-          label: 'Button',
+          label: {
+            en: "Button",
+            de: "Knopf"
+          },
           fields: [
             {
               name: 'label',
               type: 'text',
-              label: 'Social Button Label',
+              label: {
+                en: "Social Button Label",
+                de: "Soziale Schaltfläche Bezeichnung"
+              },
             },
             {
               name: 'url',
               type: 'text',
-              label: 'Social Button Url',
+              label: {
+                en: "Social Button Url",
+                de: "Soziale Schaltfläche URL"
+              },
             },
             {
               name: 'target',
               type: 'select',
-              label: 'Social Button Target',
+              label: {
+                en: "Social Button Target",
+                de: "Soziale Schaltfläche Ziel"
+              },
               options: [
                 { label: 'Same Tab', value: '_self' },
                 { label: 'New Tab', value: '_blank' },
@@ -89,7 +120,10 @@ export const Footer: GlobalConfig = {
           EXPERIMENTAL_TableFeature(),
         ],
       }),
-      label: 'Description',
+      label: {
+        en: "Description",
+        de: "Beschreibung"
+      },
     },
     lexicalHTMLField({
       htmlFieldName: 'description_html',
@@ -98,13 +132,19 @@ export const Footer: GlobalConfig = {
     {
       name: 'privacy',
       type: 'array',
-      label: 'Privacy titles',
+      label:  {
+        en: "Privacy titles",
+        de: "Datenschutz Titel"
+      },
       required: false,
       fields: [
         {
           name: 'items',
           type: 'text',
-          label: 'Privacy Item',
+          label: {
+            en: "Privacy Item",
+            de: "Datenschutz Element"
+          },
           required: false,
         },
       ],
@@ -112,7 +152,10 @@ export const Footer: GlobalConfig = {
     {
       name: 'copyright',
       type: 'text',
-      label: 'Copyright text',
+      label: {
+          en: "Copyright text",
+        de: "Copyright Text"
+      },
       required: false,
     },
     {

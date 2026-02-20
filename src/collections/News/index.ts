@@ -113,7 +113,10 @@ export const News: CollectionConfig<'news'> = {
             {
               name: 'in_focus',
               type: 'text',
-              label: 'In Focus',
+              label: {
+                en: "In Focus",
+                de: "Im Fokus"
+              },
             },
             {
               name: 'content',

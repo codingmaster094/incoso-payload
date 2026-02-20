@@ -8,27 +8,42 @@ export const Das_Wichtigste: Block = {
  
   interfaceName: 'Das Wichtigste',
   labels: {
-    singular: 'Das Wichtigste',
-    plural: 'Das Wichtigste',
+    singular: {
+      en: "Das Wichtigste",
+      de: "Das Wichtigste"
+    },
+    plural: {
+      en: "Das Wichtigste",
+      de: "Das Wichtigste"
+    },
   },
   fields: [
     {
       name: 'heading',
       type: 'text',
       required: false,
-      label: 'Heading', 
+      label: {
+        en: "Heading",
+        de: "Überschrift"
+      }, 
     },
     {
       name: 'ul_items',
       type: 'array',
-      label: 'Right Left Boxes',
+      label: {
+        en: "Right Left Boxes",
+        de: "Rechts Links Boxen"
+      },
       required: false,
       fields: [ 
         {
           name: 'title',
           type: 'text',
           required: false,
-          label: 'li item',
+          label: {
+            en: "li item",
+            de: "li Element"
+          },
         },
         
       ],

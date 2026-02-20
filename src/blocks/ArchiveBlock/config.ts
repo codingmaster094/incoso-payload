@@ -24,7 +24,10 @@ export const Archive: Block = {
           ]
         },
       }),
-      label: 'Intro Content',
+      label: {
+        en: "Intro Content",
+        de: "Einleitungsinhalt"
+      },
     },
     {
       name: 'populateBy',
@@ -48,7 +51,10 @@ export const Archive: Block = {
         condition: (_, siblingData) => siblingData.populateBy === 'collection',
       },
       defaultValue: 'posts',
-      label: 'Collections To Show',
+      label: {
+        en: "Collections To Show",
+        de: "Sammlungen Zu Zeigen"
+      },
       options: [
         {
           label: 'Posts',
@@ -63,7 +69,10 @@ export const Archive: Block = {
         condition: (_, siblingData) => siblingData.populateBy === 'collection',
       },
       hasMany: true,
-      label: 'Categories To Show',
+      label: {
+        en: "Categories To Show",
+        de: "Kategorien Zu Zeigen"
+      },
       relationTo: 'categories',
     },
     {
@@ -74,7 +83,10 @@ export const Archive: Block = {
         step: 1,
       },
       defaultValue: 10,
-      label: 'Limit',
+      label: {
+        en: "Limit",
+        de: "Limit"
+      },
     },
     {
       name: 'selectedDocs',
@@ -83,12 +95,21 @@ export const Archive: Block = {
         condition: (_, siblingData) => siblingData.populateBy === 'selection',
       },
       hasMany: true,
-      label: 'Selection',
+      label:  {
+        en: "Selection",
+        de: "Auswahl"
+      },
       relationTo: ['posts'],
     },
   ],
   labels: {
-    plural: 'Archives',
-    singular: 'Archive',
+    plural:   {
+      en: "Archives",
+      de: "Archive"
+    },
+    singular: {
+      en: "Archive",
+      de: "Archiv"
+    },
   },
 }

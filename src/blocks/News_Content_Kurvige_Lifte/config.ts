@@ -11,7 +11,10 @@ export const Kurvige_Lifte: Block = {
     {
       name: 'title',
       type: 'text',
-      label: 'Title',
+      label: {
+        en:"title",
+        de:"Titel"
+      },
     },
     {
       name: 'heroImage',

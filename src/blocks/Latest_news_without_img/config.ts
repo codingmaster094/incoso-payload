@@ -6,35 +6,56 @@ export const Latest_news_without_img: Block = {
   imageAltText: 'Latest News Without Image',
   interfaceName: 'LatestNewsWithoutImgBlock',
   labels: {
-    singular: 'Aktuelle Nachrichten Ohne Bild',
-    plural: 'Aktuelle Nachrichten Ohne Bild',
+    singular: {
+      en: "Latest News Without Image",
+      de: "Aktuelle Nachrichten Ohne Bild"
+    },
+    plural: {
+      en: "Latest News Without Image",
+      de: "Aktuelle Nachrichten Ohne Bild"
+    },
   },
   fields: [
     {
       name: 'heading',
       type: 'text',
       required: false,
-      label: 'Main Heading',
+      label: {
+        en: "Main Heading",
+        de: "Hauptüberschrift"
+      },
     },
     {
       name: 'boxbutton',
       type: 'group',
-      label: 'Button',
+      label: {
+        en: "Button",
+        de: "Knopf"
+      },
       fields: [
         {
           name: 'label',
           type: 'text',
-          label: 'Box Button Label',
+          label: {
+            en: "Button Label",
+            de: "Knopf Beschriftung"
+          },
         },
         {
           name: 'url',
           type: 'text',
-          label: 'Box Button Url',
+          label: {
+            en: "Button Url",
+            de: "Knopf Url"
+          },
         },
         {
           name: 'target',
           type: 'select',
-          label: 'Box Button Target',
+          label: {
+            en: "Button Target",
+            de: "Knopf Ziel"
+          },
           options: [
             { label: 'Same Tab', value: '_self' },
             { label: 'New Tab', value: '_blank' },
@@ -50,7 +71,10 @@ export const Latest_news_without_img: Block = {
       hasMany: true,
       required: true,
       maxRows: 3,
-      label: 'Select Latest News',
+      label: {
+        en: "Select Latest News",
+        de: "Aktuelle Nachrichten auswählen"
+      },
     },
   ],
 }
